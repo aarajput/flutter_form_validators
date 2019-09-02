@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'required_validation_container.dart';
+import 'min_validation_container.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,7 +38,12 @@ class _Body extends StatelessWidget {
         vertical: 8,
       ),
       children: <Widget>[
+        SizedBox(height: 8),
         RequiredValidationContainer(),
+        SizedBox(height: 8),
+        Divider(),
+        SizedBox(height: 8),
+        MinValidationContainer(),
       ],
     );
   }

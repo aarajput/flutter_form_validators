@@ -17,6 +17,7 @@ class Validators {
       if (value.isEmpty)
         return null;
       else {
+        value = value.replaceAll(' ', '').replaceAll(',', '');
         final dValue = double.parse(value);
         if (dValue < min)
           return errorMessage;
