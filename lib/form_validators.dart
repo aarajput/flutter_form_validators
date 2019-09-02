@@ -11,4 +11,18 @@ class Validators {
         return null;
     };
   }
+
+  static FormFieldValidator<String> min(double min, String errorMessage) {
+    return (value) {
+      if (value.isEmpty)
+        return null;
+      else {
+        final dValue = double.parse(value);
+        if (dValue < min)
+          return errorMessage;
+        else
+          return null;
+      }
+    };
+  }
 }
