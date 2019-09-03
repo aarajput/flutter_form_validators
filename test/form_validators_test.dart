@@ -53,4 +53,14 @@ void main() {
     expect(Validators.minLength(3, errorMessage)('abcd'), null);
     expect(Validators.minLength(3, errorMessage)('abcde'), null);
   });
+
+  test('Test Validators.maxLength', () {
+    final errorMessage = 'Characters count is greater than 3';
+    expect(Validators.maxLength(3, errorMessage)(''), null);
+    expect(Validators.maxLength(3, errorMessage)('a'), null);
+    expect(Validators.maxLength(3, errorMessage)('ab'), null);
+    expect(Validators.maxLength(3, errorMessage)('abc'), null);
+    expect(Validators.maxLength(3, errorMessage)('abcd'), errorMessage);
+    expect(Validators.maxLength(3, errorMessage)('abcde'), errorMessage);
+  });
 }

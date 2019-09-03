@@ -67,6 +67,18 @@ class Validators {
     };
   }
 
+  static FormFieldValidator<String> maxLength(
+      int maxLength, String errorMessage) {
+    return (value) {
+      if (value.isEmpty) return null;
+
+      if (value.length > maxLength)
+        return errorMessage;
+      else
+        return null;
+    };
+  }
+
   // -------------------- private functions ---------------------- //
 
   static double _toDouble(String value) {
