@@ -40,6 +40,21 @@ class Validators {
     };
   }
 
+  static FormFieldValidator<String> email(String errorMessage) {
+    return (value) {
+      if (value.trim().isEmpty)
+        return null;
+      else {
+        final emailRegex = RegExp(
+            r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+        if (emailRegex.hasMatch(value))
+          return null;
+        else
+          return errorMessage;
+      }
+    };
+  }
+
   // -------------------- private functions ---------------------- //
 
   static double _toDouble(String value) {

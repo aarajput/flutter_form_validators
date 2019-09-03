@@ -32,4 +32,15 @@ void main() {
     expect(Validators.max(3, errorMessage)('3'), null);
     expect(Validators.max(3, errorMessage)('4'), errorMessage);
   });
+
+  test('Test Validators.email', () {
+    final errorMessage = 'Invalid email address';
+    expect(Validators.email(errorMessage)('test'), errorMessage);
+    expect(Validators.email(errorMessage)('test@example'), null);
+    expect(Validators.email(errorMessage)('@example'), errorMessage);
+    expect(Validators.email(errorMessage)('text@example.'), errorMessage);
+    expect(Validators.email(errorMessage)('text@example.com'), null);
+    expect(Validators.email(errorMessage)('example.com'), errorMessage);
+    expect(Validators.email(errorMessage)('@example.com'), errorMessage);
+  });
 }
