@@ -14,16 +14,36 @@ class Validators {
 
   static FormFieldValidator<String> min(double min, String errorMessage) {
     return (value) {
-      if (value.isEmpty)
+      if (value.trim().isEmpty)
         return null;
       else {
-        value = value.replaceAll(' ', '').replaceAll(',', '');
-        final dValue = double.parse(value);
+        final dValue = _toDouble(value);
         if (dValue < min)
           return errorMessage;
         else
           return null;
       }
     };
+  }
+
+  static FormFieldValidator<String> max(double max, String errorMessage) {
+    return (value) {
+      if (value.trim().isEmpty)
+        return null;
+      else {
+        final dValue = _toDouble(value);
+        if (dValue > max)
+          return errorMessage;
+        else
+          return null;
+      }
+    };
+  }
+
+  // -------------------- private functions ---------------------- //
+
+  static double _toDouble(String value) {
+    value = value.replaceAll(' ', '').replaceAll(',', '');
+    return double.parse(value);
   }
 }
