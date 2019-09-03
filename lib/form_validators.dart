@@ -55,6 +55,18 @@ class Validators {
     };
   }
 
+  static FormFieldValidator<String> minLength(
+      int minLength, String errorMessage) {
+    return (value) {
+      if (value.isEmpty) return null;
+
+      if (value.length < minLength)
+        return errorMessage;
+      else
+        return null;
+    };
+  }
+
   // -------------------- private functions ---------------------- //
 
   static double _toDouble(String value) {

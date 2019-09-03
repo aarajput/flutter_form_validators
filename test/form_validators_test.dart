@@ -43,4 +43,14 @@ void main() {
     expect(Validators.email(errorMessage)('example.com'), errorMessage);
     expect(Validators.email(errorMessage)('@example.com'), errorMessage);
   });
+
+  test('Test Validators.minLength', () {
+    final errorMessage = 'Characters count is less than 3';
+    expect(Validators.minLength(3, errorMessage)(''), null);
+    expect(Validators.minLength(3, errorMessage)('a'), errorMessage);
+    expect(Validators.minLength(3, errorMessage)('ab'), errorMessage);
+    expect(Validators.minLength(3, errorMessage)('abc'), null);
+    expect(Validators.minLength(3, errorMessage)('abcd'), null);
+    expect(Validators.minLength(3, errorMessage)('abcde'), null);
+  });
 }
