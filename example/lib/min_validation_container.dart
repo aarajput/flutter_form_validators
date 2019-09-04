@@ -21,12 +21,12 @@ class _MinValidationContainerState extends State<MinValidationContainer> {
               signed: true,
             ),
             decoration: InputDecoration(
-              labelText: 'Minimun 5',
+              labelText: 'Minimum 5',
             ),
             validator: Validators.min(5, 'Value less than 5 not allowed'),
           ),
           RaisedButton(
-            child: Text('Validate Minimun 5 Field'),
+            child: Text('Validate Minimum 5 Field'),
             onPressed: () {
               formKey.currentState.validate();
             },

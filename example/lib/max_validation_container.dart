@@ -21,12 +21,12 @@ class _MaxValidationContainerState extends State<MaxValidationContainer> {
               signed: true,
             ),
             decoration: InputDecoration(
-              labelText: 'Maximun 5',
+              labelText: 'Maximum 5',
             ),
             validator: Validators.max(5, 'Value greater than 5 not allowed'),
           ),
           RaisedButton(
-            child: Text('Validate Maximun 5 Field'),
+            child: Text('Validate Maximum 5 Field'),
             onPressed: () {
               formKey.currentState.validate();
             },
