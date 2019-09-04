@@ -49,10 +49,7 @@ TextFormField(
   decoration: InputDecoration(
     labelText: 'Email',
   ),
-  validator: Validators.compose([
-    Validators.required('Email is required'),
-    Validators.email('Invalid email address'),
-  ]),
+  validator: Validators.email('Invalid email address'),
 ),
 ```
 #### Documentation
