@@ -7,7 +7,6 @@ import 'package:flutter/widgets.dart' show FormFieldValidator;
 /// A validator is a function that processes a `FormField`
 /// and returns an error [String] or null. A null [String] means that validation has passed.
 class Validators {
-
   /// Validator that requires the field have a non-empty value.
   ///
   /// ### Validate that the field is non-empty
@@ -93,6 +92,25 @@ class Validators {
     };
   }
 
+  /// Validator that requires the field's value pass an email validation test.
+  ///
+  /// This validator uses Regex of HTML5 email validator.
+  ///
+  /// ```dart
+  /// RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+  /// ```
+  ///
+  /// ### Validate that the field matches a valid email pattern
+  ///
+  /// ```dart
+  ///           TextFormField(
+  ///            decoration: InputDecoration(
+  ///              labelText: 'Email',
+  ///            ),
+  ///            validator: Validators.email('Invalid email address'),
+  ///          ),
+  /// ```
+  ///
   static FormFieldValidator<String> email(String errorMessage) {
     return (value) {
       if (value.trim().isEmpty)
@@ -107,6 +125,7 @@ class Validators {
       }
     };
   }
+
 
   static FormFieldValidator<String> minLength(
       int minLength, String errorMessage) {
