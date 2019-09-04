@@ -22,7 +22,7 @@ void main() {
   });
 
   test('Test Validators.max', () {
-    final errorMessage = 'Value less than 3 not allowed';
+    final errorMessage = 'Value greater than 3 not allowed';
     expect(Validators.max(3, errorMessage)(''), null);
     expect(Validators.max(3, errorMessage)(' '), null);
     expect(Validators.max(3, errorMessage)(' 2'), null);
@@ -80,5 +80,91 @@ void main() {
         errorMessage);
     expect(Validators.patternString(regexString, errorMessage)('#()%'),
         errorMessage);
+  });
+
+  test('Test Validators.compose', () {
+    final errorMessageRequired = 'Field is required';
+    final errorMessageMin = 'Value less than 3 not allowed';
+    final errorMessageMax = 'Value greater than 6 not allowed';
+    final errorMessageEmail = 'Invalid email address';
+    final errorMessageMinLength = 'Characters count is less than 3';
+    final errorMessageMaxLength = 'Characters count is greater than 6';
+
+    expect(Validators.compose([])(''), null);
+    // required + email
+    expect(
+        Validators.compose([
+          Validators.required(errorMessageRequired),
+          Validators.email(errorMessageEmail),
+        ])(''),
+        errorMessageRequired);
+    expect(
+        Validators.compose([
+          Validators.required(errorMessageRequired),
+          Validators.email(errorMessageEmail),
+        ])('ali@m..'),
+        errorMessageEmail);
+    expect(
+        Validators.compose([
+          Validators.required(errorMessageRequired),
+          Validators.email(errorMessageEmail),
+        ])('ali@m.c'),
+        null);
+
+    // required + minLength + maxLength
+    expect(
+        Validators.compose([
+          Validators.required(errorMessageRequired),
+          Validators.minLength(3, errorMessageMinLength),
+          Validators.maxLength(6, errorMessageMaxLength),
+        ])(''),
+        errorMessageRequired);
+    expect(
+        Validators.compose([
+          Validators.required(errorMessageRequired),
+          Validators.minLength(3, errorMessageMinLength),
+          Validators.maxLength(6, errorMessageMaxLength),
+        ])('ab'),
+        errorMessageMinLength);
+    expect(
+        Validators.compose([
+          Validators.required(errorMessageRequired),
+          Validators.minLength(3, errorMessageMinLength),
+          Validators.maxLength(6, errorMessageMaxLength),
+        ])('abcdefg'),
+        errorMessageMaxLength);
+    expect(
+        Validators.compose([
+          Validators.required(errorMessageRequired),
+          Validators.minLength(3, errorMessageMinLength),
+          Validators.maxLength(6, errorMessageMaxLength),
+        ])('abcde'),
+        null);
+
+    // optional + min + max
+    expect(
+        Validators.compose([
+          Validators.min(3, errorMessageMin),
+          Validators.max(6, errorMessageMax),
+        ])(''),
+        null);
+    expect(
+        Validators.compose([
+          Validators.min(3, errorMessageMin),
+          Validators.max(6, errorMessageMax),
+        ])('1'),
+        errorMessageMin);
+    expect(
+        Validators.compose([
+          Validators.min(3, errorMessageMin),
+          Validators.max(6, errorMessageMax),
+        ])('7'),
+        errorMessageMax);
+    expect(
+        Validators.compose([
+          Validators.min(3, errorMessageMin),
+          Validators.max(6, errorMessageMax),
+        ])('6'),
+        null);
   });
 }

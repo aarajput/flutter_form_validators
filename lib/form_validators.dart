@@ -96,6 +96,17 @@ class Validators {
     };
   }
 
+  static FormFieldValidator<String> compose(
+      List<FormFieldValidator<String>> validators) {
+    return (value) {
+      for (final validator in validators) {
+        final result = validator(value);
+        if (result != null) return result;
+      }
+      return null;
+    };
+  }
+
   // -------------------- private functions ---------------------- //
 
   static double _toDouble(String value) {
