@@ -7,6 +7,7 @@ import 'email_validation_container.dart';
 import 'min_length_validation_container.dart';
 import 'max_length_validation_container.dart';
 import 'pattern_validation_container.dart';
+import 'compose_validation_container.dart';
 
 void main() => runApp(MyApp());
 
@@ -69,6 +70,10 @@ class _Body extends StatelessWidget {
         Divider(),
         SizedBox(height: 8),
         PatternValidationContainer(),
+        SizedBox(height: 8),
+        Divider(),
+        SizedBox(height: 8),
+        ComposeValidationContainer(),
       ],
     );
   }
