@@ -38,3 +38,7 @@ TextFormField(
 - [Maximum Length](#maximum-length)
 - [Pattern](#pattern)
 - [Compose](#compose)
+
+### Required
+
+`Validators.required` is used to make sure that TextFormField is non-empty.
