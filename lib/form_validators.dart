@@ -152,6 +152,20 @@ class Validators {
     };
   }
 
+  /// Validator that requires the length of the field's value to be less than or equal
+  /// to the provided maximum length.
+  ///
+  /// ### Validate that the field has maximum of 5 characters
+  ///
+  /// ```dart
+  ///           TextFormField(
+  ///            decoration: InputDecoration(
+  ///              labelText: 'Maximum length 5',
+  ///            ),
+  ///            validator: Validators.maxLength(5, 'Characters are greater than 5'),
+  ///          ),
+  /// ```
+  ///
   static FormFieldValidator<String> maxLength(
       int maxLength, String errorMessage) {
     return (value) {
