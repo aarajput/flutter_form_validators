@@ -126,7 +126,20 @@ class Validators {
     };
   }
 
-
+  /// Validator that requires the length of the fields's value to be greater than or equal
+  /// to the provided minimum length.
+  ///
+  /// ### Validate that the field has a minimum of 5 characters
+  ///
+  /// ```dart
+  ///           TextFormField(
+  ///            decoration: InputDecoration(
+  ///              labelText: 'Minimum length 5',
+  ///            ),
+  ///            validator: Validators.minLength(5, 'Characters are less than 5'),
+  ///          ),
+  /// ```
+  ///
   static FormFieldValidator<String> minLength(
       int minLength, String errorMessage) {
     return (value) {
