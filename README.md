@@ -1,14 +1,30 @@
-# form_validators
+# Form Validators
+A Flutter plugin which provides a set of validators that can be used by form fields.
 
-A new Flutter package project.
+![Build Status](https://img.shields.io/badge/build-passing-green)
+![Unit Test](https://img.shields.io/badge/unit%20tests-passing-green)
+[![Author](https://img.shields.io/badge/author-wisecrab-green)](https://wisecrab.com)
 
-## Getting Started
+## About
+This flutter plugin provides utility functions to make form validation easy. This plugin is inspiration from Angular Validators class.
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Version
+This plugin supports dart version 2.2+
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## How to use Form Validators
+
+### For Example:
+#### Validating if TextFormField is non-empty and has valid email address
+
+```dart
+TextFormField(
+  decoration: InputDecoration(
+    labelText: 'Email',
+  ),
+  validator: Validators.compose([
+    Validators.required('Email is required'),
+    Validators.email('Invalid email address'),
+  ]),
+),
+```
+
