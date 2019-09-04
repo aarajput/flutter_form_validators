@@ -16,12 +16,12 @@ class _EmailValidationContainerState extends State<EmailValidationContainer> {
       key: formKey,
       child: Column(
         children: [
-TextFormField(
-  decoration: InputDecoration(
-    labelText: 'Email',
-  ),
-  validator: Validators.email('Invalid email address'),
-),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Email',
+            ),
+            validator: Validators.email('Invalid email address'),
+          ),
           RaisedButton(
             child: Text('Validate email Field'),
             onPressed: () {

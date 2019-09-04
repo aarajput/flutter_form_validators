@@ -39,9 +39,12 @@ TextFormField(
 - [Pattern](#pattern)
 - [Compose](#compose)
 
+All validator functions have have return type of `FormFieldValidator<String>` which is required type for `validator` field in `TextFormField`.
+
+
 ### Required
 
-`Validators.required` is used to make sure that TextFormField is non-empty.
+`Validators.required(String errorMessage)` is used to make sure that TextFormField is non-empty.
 
 #### Example
 ```dart
@@ -57,3 +60,16 @@ TextFormField(
 | Params        | Description   |
 | ------------- | ------------- |
 | errorMessage  | `String` value is passed to to this parameter to show error in case of validation failure|
+
+
+### Minimum
+`Validators.min(double min, String errorMessage)` is used to make sure that TextFormField's value is greater than or equal to the provided number. Number can be integer or double.
+
+#### Documentation
+`Validators.min` takes two parameters.
+| Params        | Description   |
+| ------------- | ------------- |
+|       min     | `double` value is passed to this param. Validator will return error if TextFormField value is less than `min`|
+| errorMessage  | `String` value is passed to to this parameter to show error in case of validation failure|
+
+**_Note:_** _If `TextFormField`'s value is empty, then this validator won't return any error because it considers `TextFormField` as optional. Use this validation with combination of [Required](#required) validator if specified `TextFormField` is compulsory. Check [Compose](#compose) validator to find out how to combine two validators_
