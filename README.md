@@ -72,9 +72,7 @@ ___
 
 | Params        | Description   |
 | ------------- | ------------- |
-|       min     | `double` value is passed to this param. 
-
-Validator will return error if TextFormField value is less than `min`|
+|       min     | `double` value is passed to this param. Validator will return error if TextFormField is non-empty and its value is less than `min`|
 | errorMessage  | `String` value is passed to to this parameter to show error in case of validation failure|
 
 **_Note:_** _If `TextFormField`'s value is empty, then this validator won't return any error because it considers `TextFormField` as optional. Use this validation with combination of [Required](#required) validator if specified `TextFormField` is compulsory. Check [Compose](#compose) validator to find out how to combine two validators_
