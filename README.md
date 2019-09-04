@@ -42,3 +42,21 @@ TextFormField(
 ### Required
 
 `Validators.required` is used to make sure that TextFormField is non-empty.
+
+#### Example
+```dart
+TextFormField(
+  decoration: InputDecoration(
+    labelText: 'Email',
+  ),
+  validator: Validators.compose([
+    Validators.required('Email is required'),
+    Validators.email('Invalid email address'),
+  ]),
+),
+```
+#### Documentation
+
+| Params        | Description   |
+| ------------- | ------------- |
+| errorMessage  | `String` value is passed to to this parameter to show error in case of validation failure|
