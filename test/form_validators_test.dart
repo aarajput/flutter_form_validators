@@ -63,4 +63,22 @@ void main() {
     expect(Validators.maxLength(3, errorMessage)('abcd'), errorMessage);
     expect(Validators.maxLength(3, errorMessage)('abcde'), errorMessage);
   });
+
+  test('Test Validators.patternString', () {
+    final errorMessage = 'Invalid value';
+    final regexString = r"^[A-Za-z]+$";
+    expect(Validators.patternString(regexString, errorMessage)(''), null);
+    expect(Validators.patternString(regexString, errorMessage)('a'), null);
+    expect(Validators.patternString(regexString, errorMessage)('A'), null);
+    expect(Validators.patternString(regexString, errorMessage)('abc'), null);
+    expect(Validators.patternString(regexString, errorMessage)('AbC'), null);
+    expect(Validators.patternString(regexString, errorMessage)('a1'),
+        errorMessage);
+    expect(Validators.patternString(regexString, errorMessage)('1a'),
+        errorMessage);
+    expect(Validators.patternString(regexString, errorMessage)('1a'),
+        errorMessage);
+    expect(Validators.patternString(regexString, errorMessage)('#()%'),
+        errorMessage);
+  });
 }

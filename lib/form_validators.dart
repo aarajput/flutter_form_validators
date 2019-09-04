@@ -79,6 +79,23 @@ class Validators {
     };
   }
 
+  static FormFieldValidator<String> patternString(
+      String pattern, String errorMessage) {
+    return patternRegExp(RegExp(pattern), errorMessage);
+  }
+
+  static FormFieldValidator<String> patternRegExp(
+      RegExp pattern, String errorMessage) {
+    return (value) {
+      if (value.isEmpty) return null;
+
+      if (pattern.hasMatch(value))
+        return null;
+      else
+        return errorMessage;
+    };
+  }
+
   // -------------------- private functions ---------------------- //
 
   static double _toDouble(String value) {
