@@ -28,3 +28,13 @@ TextFormField(
 ),
 ```
 
+## Api Overview
+### Utility Functions
+- [Required](#required)
+- [Minimum](#minimun)
+- [Maximum](#maximun)
+- [Email](#email)
+- [Minimum Length](#minimum-length)
+- [Maximum Length](#maximum-length)
+- [Pattern](#pattern)
+- [Compose](#compose)
