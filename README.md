@@ -188,14 +188,14 @@ This code will validate TextFormField's value and show error in case of field's 
 |       maxLength     | `int` value is passed to this param. Validator will return error if TextFormField is non-empty and its number of characters are greater than `maxLength`.|
 | errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
 
-
+---
 
 ### Pattern
 `Validators.patternString(String pattern, String errorMessage)` and `Validators.patternRegExp(RegExp pattern, String errorMessage)` are validators that requires the field's value to match a regex pattern.
 Incase of `Validators.patternString`, you need to pass regex like this `r"^[A-Za-z]+$"`
 
 #### Examples
-This code will validate TextFormField's value and show error in case of field's value is non-empty and its not matching regex.
+This code will validate TextFormField's value and show error in case of field's value is non-empty and its contains character other than alphabets.
 ###### patternRegExp
 ```dart
   TextFormField(
