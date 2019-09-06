@@ -1,4 +1,4 @@
-name: form_validators
+name: wc_form_validators
 description: A Flutter plugin to validate forms with util functions.
 version: 0.1.0
 author: Wisecrab <contactus@wisecrab.com>

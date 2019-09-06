@@ -1,4 +1,4 @@
-library form_validators;
+library wc_form_validators;
 
 import 'package:flutter/widgets.dart' show FormFieldValidator;
 

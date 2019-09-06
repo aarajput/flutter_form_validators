@@ -46,13 +46,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  form_validators:
-    dependency: "direct dev"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.1.0"
   matcher:
     dependency: transitive
     description:
@@ -149,5 +142,12 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.8"
+  wc_form_validators:
+    dependency: "direct dev"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.1.0"
 sdks:
   dart: ">=2.2.2 <3.0.0"

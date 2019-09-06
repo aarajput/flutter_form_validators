@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:form_validators/form_validators.dart';
+import 'package:wc_form_validators/wc_form_validators.dart';
 
 class RequiredValidationContainer extends StatefulWidget {
   @override
