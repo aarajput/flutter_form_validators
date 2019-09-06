@@ -1,8 +1,8 @@
 name: form_validators
 description: A Flutter plugin to validate forms with util functions.
 version: 0.1.0
-author:
-homepage:
+author: Wisecrab <contactus@wisecrab.com>
+homepage: https://github.com/aarajput/flutter_form_validators
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
