@@ -64,7 +64,7 @@ TextFormField(
 ___
 
 ### Minimum
-`Validators.min(double min, String errorMessage)` is used to validate if TextFormField's value is greater than or equal to the provided number (`min`).  TextFormField's value must be integer or double otherwise this validator will throw parse exception.
+`Validators.min(double min, String errorMessage)` is used to validate if TextFormField's value is greater than or equal to the provided number (`double min`).  TextFormField's value must be integer or double otherwise this validator will throw parse exception.
 
 #### Example
 This code will validate TextFormField's value and show an error in case its value is non-empty and less than 5.
@@ -93,7 +93,7 @@ This code will validate TextFormField's value and show an error in case its valu
 ---
 
 ### Maximum
-`Validators.max(double max, String errorMessage)` is used to validate if TextFormField's value is less than or equal to the provided number (`max`). TextFormField's value must be integer or double otherwise this validator will throw parse exception.
+`Validators.max(double max, String errorMessage)` is used to validate if TextFormField's value is less than or equal to the provided number (`double max`). TextFormField's value must be integer or double otherwise this validator will throw parse exception.
 
 #### Example
 This code will validate TextFormField's value and show error in case its value is non-empty and greater than 5.
