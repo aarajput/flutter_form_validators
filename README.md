@@ -127,6 +127,8 @@ This code will validate TextFormField's value and show error in case its value i
 Its uses regex of HTML5 for email validation.
 Its regex is ```^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$```
 
+If you want to use custom regex for email validation, please take a look at [Pattern](#pattern).
+
 #### Example
 This code will validate email and show error if TextFormField's value is non-empty and email address is invalid.
 ```dart
