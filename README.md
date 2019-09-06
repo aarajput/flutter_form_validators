@@ -55,7 +55,7 @@ TextFormField(
   validator: Validators.required('Name is required'),
 ),
 ```
-#### Documentation
+#### Parameters
 
 | Params        | Description   |
 | ------------- | ------------- |
@@ -82,7 +82,7 @@ This code will validate TextFormField's value and show an error in case its valu
 
 ```
 
-#### Documentation
+#### Parameters
 `Validators.min` takes two parameters.
 
 | Params        | Description   |
@@ -111,7 +111,7 @@ This code will validate TextFormField's value and show error in case its value i
 
 ```
 
-#### Documentation
+#### Parameters
 `Validators.max` takes two parameters.
 
 | Params        | Description   |
@@ -122,6 +122,27 @@ This code will validate TextFormField's value and show error in case its value i
 ---
 
 ### Email
+`Validators.email(String errorMessage)` is used to validate email address. 
+
+Its uses regex of HTML5 for email validation.
+Its regex is ```^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$```
+
+#### Example
+This code will validate email and show error if TextFormField's value is non-empty and email address is invalid.
+```dart
+  TextFormField(
+    decoration: InputDecoration(
+      labelText: 'Email',
+    ),
+    validator: Validators.email('Invalid email address'),
+  ),
+```
+
+#### Parameters
+
+| Params        | Description   |
+| ------------- | ------------- |
+| errorMessage  | `String` value is passed to this parameter to show an error in case of validation failure.|
 
 
 ---
