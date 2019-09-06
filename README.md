@@ -194,7 +194,8 @@ This code will validate TextFormField's value and show error in case of field's 
 
 ### Pattern
 `Validators.patternString(String pattern, String errorMessage)` and `Validators.patternRegExp(RegExp pattern, String errorMessage)` are validators that requires the field's value to match a regex pattern.
-Incase of `Validators.patternString`, you need to pass regex like this `r"^[A-Za-z]+$"`
+
+In case of `Validators.patternString`, you need to pass regex like this `r"^[A-Za-z]+$"`
 
 #### Examples
 This code will validate TextFormField's value and show error in case of field's value is non-empty and its contains character other than alphabets.
