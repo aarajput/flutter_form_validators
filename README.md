@@ -30,8 +30,8 @@ TextFormField(
 ## Api Overview
 ### Utility Functions
 - [Required](#required)
-- [Minimum](#minimun)
-- [Maximum](#maximun)
+- [Minimum](#minimum)
+- [Maximum](#maximum)
 - [Email](#email)
 - [Minimum Length](#minimum-length)
 - [Maximum Length](#maximum-length)
@@ -143,6 +143,50 @@ This code will validate email and show error if TextFormField's value is non-emp
 | Params        | Description   |
 | ------------- | ------------- |
 | errorMessage  | `String` value is passed to this parameter to show an error in case of validation failure.|
+
+
+### Minimum Length
+`Validators.minLength(int minLength, String errorMessage)` is a validator that requires the length of the fields's value to be greater than or equal to the provided minimum length.
+
+#### Example
+This code will validate TextFormField's value and show error in case of field's value is non-empty and its character's length is less than 5.
+```dart
+  TextFormField(
+    decoration: InputDecoration(
+      labelText: 'Minimum length 5',
+    ),
+    validator: Validators.minLength(5, 'Characters are less than 5'),
+  ),
+```
+
+#### Parameters
+
+| Params        | Description   |
+| ------------- | ------------- |
+|       minLength     | `int` value is passed to this param. Validator will return error if TextFormField is non-empty and its number of characters are less than `minLength`.|
+| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
+
+
+### Maximum Length
+`Validators.maxLength(int maxLength, String errorMessage)` is a validator that requires the length of the field's value to be less than or equal to the provided maximum length.
+
+#### Example
+This code will validate TextFormField's value and show error in case of field's value is non-empty and its character's length is greater than 5.
+```dart
+  TextFormField(
+    decoration: InputDecoration(
+      labelText: 'Maximum length 5',
+    ),
+    validator: Validators.maxLength(5, 'Characters are greater than 5'),
+  ),
+```
+
+#### Parameters
+
+| Params        | Description   |
+| ------------- | ------------- |
+|       maxLength     | `int` value is passed to this param. Validator will return error if TextFormField is non-empty and its number of characters are greater than `maxLength`.|
+| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
 
 
 ---
