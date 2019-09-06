@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:form_validators/wc_form_validators.dart';
+import 'package:wc_form_validators/wc_form_validators.dart';
 
 void main() {
   test('Test Validators.required', () {
