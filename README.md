@@ -252,11 +252,11 @@ This code will validate that _Name_ is non-empty and has character length betwee
   ),
 ```
 
-#Parameters
+#### Parameters
 
 | Params        | Description   |
 | ------------- | ------------- |
-|   validators  | `List<FormFieldValidator<String>>` value is passed to this param which you want to combine into one validator|
+|   validators  | `List<FormFieldValidator<String>>` value is passed to this param containing validators that you want to combine into one validator|
 
 
 
