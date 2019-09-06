@@ -43,10 +43,10 @@ All validator functions have have return type of `FormFieldValidator<String>` wh
 ___
 
 ### Required
-`Validators.required(String errorMessage)` is used to validate if TextFormField is non-empty.
+`Validators.required(String errorMessage)` is validator that requires the field have a non-empty value.
 
 #### Example
-This code will validate if name is not empty.
+This code will validate if name and show error if it is empty.
 ```dart
 TextFormField(
   decoration: InputDecoration(
@@ -64,7 +64,7 @@ TextFormField(
 ___
 
 ### Minimum
-`Validators.min(double min, String errorMessage)` is used to validate if TextFormField's value is greater than or equal to the provided number (`double min`).  TextFormField's value must be integer or double otherwise this validator will throw parse exception.
+`Validators.min(double min, String errorMessage)` is a validator that requires the field's value to be greater than or equal to the provided number (`double min`).  TextFormField's value must be integer or double otherwise this validator will throw parse exception.
 
 #### Example
 This code will validate TextFormField's value and show an error in case its value is non-empty and less than 5.
@@ -93,7 +93,7 @@ This code will validate TextFormField's value and show an error in case its valu
 ---
 
 ### Maximum
-`Validators.max(double max, String errorMessage)` is used to validate if TextFormField's value is less than or equal to the provided number (`double max`). TextFormField's value must be integer or double otherwise this validator will throw parse exception.
+`Validators.max(double max, String errorMessage)` is a validator that requires the field's value to be less than or equal to the provided number (`double max`). TextFormField's value must be integer or double otherwise this validator will throw parse exception.
 
 #### Example
 This code will validate TextFormField's value and show error in case its value is non-empty and greater than 5.
@@ -122,7 +122,7 @@ This code will validate TextFormField's value and show error in case its value i
 ---
 
 ### Email
-`Validators.email(String errorMessage)` is used to validate email address. 
+`Validators.email(String errorMessage)` is a validator that requires the field's value pass an email validation test. 
 
 Its uses regex of HTML5 for email validation.
 Its regex is ```^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$```
