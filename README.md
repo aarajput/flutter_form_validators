@@ -229,8 +229,41 @@ This code will validate TextFormField's value and show error in case of field's 
 |   pattern     | `String` or `RegExp` value is passed to this param. Validator will return error if TextFormField is non-empty and its not matching `pattern` that you have provided.|
 | errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
 
+---
+
+### Compose
+`Validators.compose(List<FormFieldValidator<String>> validators)` composes multiple validators into a single validator.
+
+#### How it works
+This function takes multiple validators as list and will validate each validator in provided sequence. If any of its validator returns error message, it won't check remaining validators and will return this error to `TextFormField`.
+
+#### Example
+This code will validate that _Name_ is non-empty and has character length between 5 and 10.
+```dart
+  TextFormField(
+    decoration: InputDecoration(
+      labelText: 'Name',
+    ),
+    validator: Validators.compose([
+      Validators.required('Name is required'),
+      Validators.minLength(5, 'Name cannot be less than 5 characters'),
+      Validators.maxLength(10, 'Name cannot be greater than 10 characters'),
+    ]),
+  ),
+```
+
+#Parameters
+
+| Params        | Description   |
+| ------------- | ------------- |
+|   validators  | `List<FormFieldValidator<String>>` value is passed to this param which you want to combine into one validator|
+
+
 
 ---
-**_Note:_** _If `TextFormField`'s value is empty, then this validator won't return any error because it considers `TextFormField` as optional. Use this validation with combination of [Required](#required) validator if specified `TextFormField` is compulsory. Check [Compose](#compose) validator to find out how to combine two validators_
+
+#### **_Note:_**
+
+>If `TextFormField`'s value is empty, then validators [Minimum](#minimum), [Maximum](#maximum), [Email](#email), [Minimum Length](#minimum-length), [Maximum Length](#maximum-length) and [Pattern](#pattern) won't return any error because it considers `TextFormField` as optional. Use these validators with combination of [Required](#required) validator if specified `TextFormField` is compulsory and want validation failure if field is empty. Check [Compose](#compose) validator to find out how to merge multiple validators.
 
 ___
