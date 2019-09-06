@@ -15,7 +15,6 @@ This plugin supports dart version 2.2+
 
 ### For Example:
 #### Validating if TextFormField is non-empty and has valid email address
-
 ```dart
 TextFormField(
   decoration: InputDecoration(
@@ -44,10 +43,10 @@ All validator functions have have return type of `FormFieldValidator<String>` wh
 ___
 
 ### Required
-
-`Validators.required(String errorMessage)` is used to make sure that TextFormField is non-empty.
+`Validators.required(String errorMessage)` is used to validate if TextFormField is non-empty.
 
 #### Example
+This code will validate if name is not empty.
 ```dart
 TextFormField(
   decoration: InputDecoration(
@@ -60,12 +59,28 @@ TextFormField(
 
 | Params        | Description   |
 | ------------- | ------------- |
-| errorMessage  | `String` value is passed to to this parameter to show error in case of validation failure|
+| errorMessage  | `String` value is passed to this parameter to show an error in case of validation failure.|
 
 ___
 
 ### Minimum
-`Validators.min(double min, String errorMessage)` is used to make sure that TextFormField's value is greater than or equal to the provided number. Number can be integer or double.
+`Validators.min(double min, String errorMessage)` is used to validate if TextFormField's value is greater than or equal to the provided number. Number can be integer or double.
+
+#### Example
+This code will validate TextFormField's value and show an error in case its value is non-empty and less than 5.
+```dart
+  TextFormField(
+    keyboardType: TextInputType.numberWithOptions(
+      decimal: true,
+      signed: true,
+    ),
+    decoration: InputDecoration(
+      labelText: 'Minimum 5',
+    ),
+    validator: Validators.min(5, 'Value less than 5 not allowed'),
+  ),
+
+```
 
 #### Documentation
 `Validators.min` takes two parameters.
@@ -73,8 +88,43 @@ ___
 | Params        | Description   |
 | ------------- | ------------- |
 |       min     | `double` value is passed to this param. Validator will return error if TextFormField is non-empty and its value is less than `min`|
-| errorMessage  | `String` value is passed to to this parameter to show error in case of validation failure|
+| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure|
 
+---
+
+### Maximum
+`Validators.max(double max, String errorMessage)` is used to validate if TextFormField's value is less than or equal to the provided number. Number can be integer or double.
+
+#### Example
+This code will validate TextFormField's value and show error in case its value is non-empty and greater than 5.
+```dart
+  TextFormField(
+    keyboardType: TextInputType.numberWithOptions(
+      decimal: true,
+      signed: true,
+    ),
+    decoration: InputDecoration(
+      labelText: 'Maximum 5',
+    ),
+    validator: Validators.max(5, 'Value greater than 5 not allowed'),
+  ),
+
+```
+
+#### Documentation
+`Validators.max` takes two parameters.
+
+| Params        | Description   |
+| ------------- | ------------- |
+|       max     | `double` value is passed to this param. Validator will return error if TextFormField is non-empty and its value is greater than `max`|
+| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure|
+
+---
+
+### Email
+
+
+---
 **_Note:_** _If `TextFormField`'s value is empty, then this validator won't return any error because it considers `TextFormField` as optional. Use this validation with combination of [Required](#required) validator if specified `TextFormField` is compulsory. Check [Compose](#compose) validator to find out how to combine two validators_
 
 ___
