@@ -70,6 +70,7 @@ void main() {
     final errorMessage = 'Invalid value';
     final regexString = r"^[A-Za-z]+$";
     expect(Validators.patternString(regexString, errorMessage)(''), null);
+    expect(Validators.patternString(regexString, errorMessage)(' '), errorMessage);
     expect(Validators.patternString(regexString, errorMessage)('a'), null);
     expect(Validators.patternString(regexString, errorMessage)('A'), null);
     expect(Validators.patternString(regexString, errorMessage)('abc'), null);

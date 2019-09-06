@@ -146,7 +146,7 @@ This code will validate email and show error if TextFormField's value is non-emp
 
 
 ### Minimum Length
-`Validators.minLength(int minLength, String errorMessage)` is a validator that requires the length of the fields's value to be greater than or equal to the provided minimum length.
+`Validators.minLength(int minLength, String errorMessage)` is a validator that requires the length of the field's value to be greater than or equal to the provided minimum length.
 
 #### Example
 This code will validate TextFormField's value and show error in case of field's value is non-empty and its character's length is less than 5.
@@ -186,6 +186,44 @@ This code will validate TextFormField's value and show error in case of field's 
 | Params        | Description   |
 | ------------- | ------------- |
 |       maxLength     | `int` value is passed to this param. Validator will return error if TextFormField is non-empty and its number of characters are greater than `maxLength`.|
+| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
+
+
+
+### Pattern
+`Validators.patternString(String pattern, String errorMessage)` and `Validators.patternRegExp(RegExp pattern, String errorMessage)` are validators that requires the field's value to match a regex pattern.
+Incase of `Validators.patternString`, you need to pass regex like this `r"^[A-Za-z]+$"`
+
+#### Examples
+This code will validate TextFormField's value and show error in case of field's value is non-empty and its not matching regex.
+###### patternRegExp
+```dart
+  TextFormField(
+    decoration: InputDecoration(
+      labelText: 'Pattern r"^[A-Za-z]+\$"',
+    ),
+    validator: Validators.patternRegExp(
+        RegExp(r"^[A-Za-z]+$"), 'Only alphabets are allowed'),
+  ),
+
+```
+
+###### patternString
+```dart
+  TextFormField(
+    decoration: InputDecoration(
+      labelText: 'Pattern r"^[A-Za-z]+\$"',
+    ),
+    validator: Validators.patternString(
+        r"^[A-Za-z]+$", 'Only alphabets are allowed'),
+  ),
+```
+
+#### Parameters
+
+| Params        | Description   |
+| ------------- | ------------- |
+|   pattern     | `String` or `RegExp` value is passed to this param. Validator will return error if TextFormField is non-empty and its not matching `pattern` that you have provided.|
 | errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
 
 

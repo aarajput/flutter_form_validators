@@ -131,7 +131,7 @@ class Validators {
     };
   }
 
-  /// Validator that requires the length of the fields's value to be greater than or equal
+  /// Validator that requires the length of the field's value to be greater than or equal
   /// to the provided minimum length.
   ///
   ///
@@ -185,10 +185,10 @@ class Validators {
     };
   }
 
-  /// Validator that requires the control's value to match a regex pattern.
+  /// Validator that requires the field's value to match a regex pattern.
   ///
   ///
-  /// Note that if a Regexp is provided, the Regexp is used as is to test the values. On the other
+  /// Note that if a Regexp is provided, the Regexp is used as is to test the values.
   ///
   ///
   /// ### Validate that the field only contains alphabets
@@ -208,10 +208,10 @@ class Validators {
     return patternRegExp(RegExp(pattern), errorMessage);
   }
 
-  /// Validator that requires the control's value to match a regex pattern.
+  /// Validator that requires the field's value to match a regex pattern.
   ///
   ///
-  /// Note that if a Regexp is provided, the Regexp is used as is to test the values. On the other
+  /// Note that if a Regexp is provided, the Regexp is used as is to test the values.
   ///
   ///
   /// ### Validate that the field only contains alphabets
