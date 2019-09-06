@@ -118,7 +118,7 @@ class Validators {
   ///
   static FormFieldValidator<String> email(String errorMessage) {
     return (value) {
-      if (value.trim().isEmpty)
+      if (value.isEmpty)
         return null;
       else {
         final emailRegex = RegExp(

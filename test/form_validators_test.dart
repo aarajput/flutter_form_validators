@@ -35,6 +35,8 @@ void main() {
 
   test('Test Validators.email', () {
     final errorMessage = 'Invalid email address';
+    expect(Validators.email(errorMessage)(''), null);
+    expect(Validators.email(errorMessage)(' '), errorMessage);
     expect(Validators.email(errorMessage)('test'), errorMessage);
     expect(Validators.email(errorMessage)('test@example'), null);
     expect(Validators.email(errorMessage)('@example'), errorMessage);
