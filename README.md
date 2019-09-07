@@ -6,7 +6,7 @@ A Flutter plugin which provides a set of validators that can be used by form fie
 [![Author](https://img.shields.io/badge/author-wisecrab-green)](https://wisecrab.com)
 
 ## About
-This flutter plugin provides utility functions to make form validation easy. This plugin is inspiration from Angular Validators class.
+This flutter plugin provides utility functions to make form validation easy. This plugin was inspired by Angular Validators class.
 
 ## Version
 This plugin supports dart version 2.2+
@@ -14,7 +14,7 @@ This plugin supports dart version 2.2+
 ## How to use Form Validators
 
 ### For Example:
-#### Validating if TextFormField is non-empty and has valid email address
+#### Validating if TextFormField is non-empty and has a valid email address
 ```dart
 TextFormField(
   decoration: InputDecoration(
@@ -38,7 +38,7 @@ TextFormField(
 - [Pattern](#pattern)
 - [Compose](#compose)
 
-All validator functions have have return type of `FormFieldValidator<String>` which is required type for `validator` field in `TextFormField`.
+All validator functions have return type of `FormFieldValidator<String>` which is a required type for `validator` field in `TextFormField`.
 
 ___
 
@@ -46,7 +46,7 @@ ___
 `Validators.required(String errorMessage)` is validator that requires the field have a non-empty value.
 
 #### Example
-This code will validate if name and show error if it is empty.
+This code will validate the name and show error if it is empty.
 ```dart
 TextFormField(
   decoration: InputDecoration(
@@ -59,15 +59,15 @@ TextFormField(
 
 | Params        | Description   |
 | ------------- | ------------- |
-| errorMessage  | `String` value is passed to this parameter to show an error in case of validation failure.|
+| errorMessage  | `String` value is passed to this parameter to show an error in case of a validation failure.|
 
 ___
 
 ### Minimum
-`Validators.min(double min, String errorMessage)` is a validator that requires the field's value to be greater than or equal to the provided number (`double min`).  TextFormField's value must be integer or double otherwise this validator will throw parse exception.
+`Validators.min(double min, String errorMessage)` is a validator that requires the field's value be greater than or equal to the provided number (`double min`).  TextFormField's value must be an integer or double otherwise this validator will throw a parse exception.
 
 #### Example
-This code will validate TextFormField's value and show an error in case its value is non-empty and less than 5.
+This code will validate a TextFormField's value and show an error in case its value is non-empty and less than 5.
 ```dart
   TextFormField(
     keyboardType: TextInputType.numberWithOptions(
@@ -87,16 +87,16 @@ This code will validate TextFormField's value and show an error in case its valu
 
 | Params        | Description   |
 | ------------- | ------------- |
-|       min     | `double` value is passed to this param. Validator will return error if TextFormField is non-empty and its value is less than `min`|
-| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure|
+|       min     | `double` value is passed to this param. Validator will return an error if TextFormField is non-empty and its value is less than `min`|
+| errorMessage  | `String` value is passed to this parameter to show an error in case of a validation failure|
 
 ---
 
 ### Maximum
-`Validators.max(double max, String errorMessage)` is a validator that requires the field's value to be less than or equal to the provided number (`double max`). TextFormField's value must be integer or double otherwise this validator will throw parse exception.
+`Validators.max(double max, String errorMessage)` is a validator that requires the field's value to be less than or equal to the provided number (`double max`). TextFormField's value must be an integer or double otherwise this validator will throw a parse exception.
 
 #### Example
-This code will validate TextFormField's value and show error in case its value is non-empty and greater than 5.
+This code will validate TextFormField's value and show an error in case its value is non-empty and greater than 5.
 ```dart
   TextFormField(
     keyboardType: TextInputType.numberWithOptions(
@@ -116,8 +116,8 @@ This code will validate TextFormField's value and show error in case its value i
 
 | Params        | Description   |
 | ------------- | ------------- |
-|       max     | `double` value is passed to this param. Validator will return error if TextFormField is non-empty and its value is greater than `max`|
-| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure|
+|       max     | `double` value is passed to this param. Validator will return an error if TextFormField is non-empty and its value is greater than `max`|
+| errorMessage  | `String` value is passed to this parameter to show an error in case of validation failure|
 
 ---
 
@@ -130,7 +130,7 @@ Its regex is ```^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,2
 If you want to use custom regex for email validation, please take a look at [Pattern](#pattern).
 
 #### Example
-This code will validate email and show error if TextFormField's value is non-empty and email address is invalid.
+This code will validate the email and show an error if TextFormField's value is non-empty and the email address is invalid.
 ```dart
   TextFormField(
     decoration: InputDecoration(
@@ -151,7 +151,7 @@ This code will validate email and show error if TextFormField's value is non-emp
 `Validators.minLength(int minLength, String errorMessage)` is a validator that requires the length of the field's value to be greater than or equal to the provided minimum length.
 
 #### Example
-This code will validate TextFormField's value and show error in case of field's value is non-empty and its character's length is less than 5.
+This code will validate the TextFormField's value and show an error in case field's value is non-empty and its character length is less than 5.
 ```dart
   TextFormField(
     decoration: InputDecoration(
@@ -165,7 +165,7 @@ This code will validate TextFormField's value and show error in case of field's 
 
 | Params        | Description   |
 | ------------- | ------------- |
-|       minLength     | `int` value is passed to this param. Validator will return error if TextFormField is non-empty and its number of characters are less than `minLength`.|
+|       minLength     | `int` value is passed to this param. Validator will return an error if TextFormField is non-empty and its number of characters is less than `minLength`.|
 | errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
 
 
@@ -173,7 +173,7 @@ This code will validate TextFormField's value and show error in case of field's 
 `Validators.maxLength(int maxLength, String errorMessage)` is a validator that requires the length of the field's value to be less than or equal to the provided maximum length.
 
 #### Example
-This code will validate TextFormField's value and show error in case of field's value is non-empty and its character's length is greater than 5.
+This code will validate TextFormField's value and show an error in case the field's value is non-empty and its character length is greater than 5.
 ```dart
   TextFormField(
     decoration: InputDecoration(
@@ -187,18 +187,18 @@ This code will validate TextFormField's value and show error in case of field's 
 
 | Params        | Description   |
 | ------------- | ------------- |
-|       maxLength     | `int` value is passed to this param. Validator will return error if TextFormField is non-empty and its number of characters are greater than `maxLength`.|
+|       maxLength     | `int` value is passed to this param. The validator will return an error if the TextFormField is non-empty and its number of characters are greater than `maxLength`.|
 | errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
 
 ---
 
 ### Pattern
-`Validators.patternString(String pattern, String errorMessage)` and `Validators.patternRegExp(RegExp pattern, String errorMessage)` are validators that requires the field's value to match a regex pattern.
+`Validators.patternString(String pattern, String errorMessage)` and `Validators.patternRegExp(RegExp pattern, String errorMessage)` are validators that require the field's value to match a regex pattern.
 
 In case of `Validators.patternString`, you need to pass regex like this `r"^[A-Za-z]+$"`
 
 #### Examples
-This code will validate TextFormField's value and show error in case of field's value is non-empty and its contains character other than alphabets.
+This code will validate the TextFormField's value and show an error in case the field's value is non-empty and it contains characters other than letters.
 ###### patternRegExp
 ```dart
   TextFormField(
@@ -226,8 +226,8 @@ This code will validate TextFormField's value and show error in case of field's 
 
 | Params        | Description   |
 | ------------- | ------------- |
-|   pattern     | `String` or `RegExp` value is passed to this param. Validator will return error if TextFormField is non-empty and its not matching `pattern` that you have provided.|
-| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
+|   pattern     | `String` or `RegExp` the value is passed to this param. The validator will return an error if the TextFormField is non-empty and it's not matching the `pattern` that you have provided.|
+| errorMessage  | `String` value is passed to this parameter to show error in case of a validation failure.|
 
 ---
 
@@ -235,10 +235,10 @@ This code will validate TextFormField's value and show error in case of field's 
 `Validators.compose(List<FormFieldValidator<String>> validators)` composes multiple validators into a single validator.
 
 #### How it works
-This function takes multiple validators as list and will validate each validator in provided sequence. If any of its validator returns error message, it won't check remaining validators and will return this error to `TextFormField`.
+This function takes multiple validators as a list and will validate each validator in the provided sequence. If any of its validator returns an error message, it won't check the remaining validators and will return this error to the `TextFormField`.
 
 #### Example
-This code will validate that _Name_ is non-empty and has character length between 5 and 10.
+This code will validate that _Name_ is non-empty and has a character length between 5 and 10.
 ```dart
   TextFormField(
     decoration: InputDecoration(
@@ -264,6 +264,6 @@ This code will validate that _Name_ is non-empty and has character length betwee
 
 #### **_Note:_**
 
->If `TextFormField`'s value is empty, then validators [Minimum](#minimum), [Maximum](#maximum), [Email](#email), [Minimum Length](#minimum-length), [Maximum Length](#maximum-length) and [Pattern](#pattern) won't return any error because it considers `TextFormField` as optional. Use these validators with combination of [Required](#required) validator if specified `TextFormField` is compulsory and want validation failure if field is empty. Check [Compose](#compose) validator to find out how to merge multiple validators.
+>If `TextFormField`'s value is empty, then validators [Minimum](#minimum), [Maximum](#maximum), [Email](#email), [Minimum Length](#minimum-length), [Maximum Length](#maximum-length) and [Pattern](#pattern) won't return any error because it considers `TextFormField` as optional. Use these validators in combination with the [Required](#required) validator if the specified `TextFormField` is compulsory and you want a validation failure if the field is empty. Check [Compose](#compose) validator to find out how to merge multiple validators.
 
 ___
