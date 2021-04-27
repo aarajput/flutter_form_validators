@@ -23,10 +23,10 @@ class _MaxLengthValidationContainerState
             ),
             validator: Validators.maxLength(5, 'Characters are greater than 5'),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Validate Maximum length 5 Field'),
             onPressed: () {
-              formKey.currentState.validate();
+              formKey.currentState?.validate();
             },
           )
         ],

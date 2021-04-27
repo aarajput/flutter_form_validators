@@ -1,11 +1,10 @@
 name: wc_form_validators
-description: A Flutter plugin to validate forms with util functions.
-version: 0.1.1
-author: Wisecrab <contactus@wisecrab.com>
+description: A Flutter plugin to validate forms with utility functions. It can validate emails, regex, character limits and many more.
+version: 1.0.0
 homepage: https://github.com/aarajput/flutter_form_validators
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:

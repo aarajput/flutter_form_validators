@@ -22,10 +22,10 @@ class _EmailValidationContainerState extends State<EmailValidationContainer> {
             ),
             validator: Validators.email('Invalid email address'),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Validate email Field'),
             onPressed: () {
-              formKey.currentState.validate();
+              formKey.currentState?.validate();
             },
           )
         ],

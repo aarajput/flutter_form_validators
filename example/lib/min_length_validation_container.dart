@@ -23,10 +23,10 @@ class _MinLengthValidationContainerState
             ),
             validator: Validators.minLength(5, 'Characters are less than 5'),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Validate Minimum length 5 Field'),
             onPressed: () {
-              formKey.currentState.validate();
+              formKey.currentState?.validate();
             },
           )
         ],

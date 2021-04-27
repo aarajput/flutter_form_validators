@@ -25,10 +25,10 @@ class _MaxValidationContainerState extends State<MaxValidationContainer> {
             ),
             validator: Validators.max(5, 'Value greater than 5 not allowed'),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Validate Maximum 5 Field'),
             onPressed: () {
-              formKey.currentState.validate();
+              formKey.currentState?.validate();
             },
           )
         ],

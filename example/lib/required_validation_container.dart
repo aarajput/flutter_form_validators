@@ -23,10 +23,10 @@ class _RequiredValidationContainerState
             ),
             validator: Validators.required('Field is required'),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Validate Required Field'),
             onPressed: () {
-              formKey.currentState.validate();
+              formKey.currentState?.validate();
             },
           )
         ],

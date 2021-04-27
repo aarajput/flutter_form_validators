@@ -25,10 +25,10 @@ class _MinValidationContainerState extends State<MinValidationContainer> {
             ),
             validator: Validators.min(5, 'Value less than 5 not allowed'),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Validate Minimum 5 Field'),
             onPressed: () {
-              formKey.currentState.validate();
+              formKey.currentState?.validate();
             },
           )
         ],

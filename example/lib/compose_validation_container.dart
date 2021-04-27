@@ -27,10 +27,10 @@ class _ComposeValidationContainerState
               Validators.maxLength(10, 'Characters cannot be greater than 10'),
             ]),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Validate compose Field'),
             onPressed: () {
-              formKey.currentState.validate();
+              formKey.currentState?.validate();
             },
           )
         ],

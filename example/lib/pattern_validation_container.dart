@@ -24,10 +24,10 @@ class _PatternValidationContainerState
             validator: Validators.patternRegExp(
                 RegExp(r"^[A-Za-z]+$"), 'Only alphabets are allowed'),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Validate Pattern Field'),
             onPressed: () {
-              formKey.currentState.validate();
+              formKey.currentState?.validate();
             },
           )
         ],

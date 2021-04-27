@@ -24,6 +24,9 @@ class Validators {
   ///
   static FormFieldValidator<String> required(String errorMessage) {
     return (value) {
+      if (value == null) {
+        value = '';
+      }
       if (value.isEmpty)
         return errorMessage;
       else
@@ -52,6 +55,9 @@ class Validators {
   ///
   static FormFieldValidator<String> min(double min, String errorMessage) {
     return (value) {
+      if (value == null) {
+        value = '';
+      }
       if (value.trim().isEmpty)
         return null;
       else {
@@ -84,6 +90,9 @@ class Validators {
   ///
   static FormFieldValidator<String> max(double max, String errorMessage) {
     return (value) {
+      if (value == null) {
+        value = '';
+      }
       if (value.trim().isEmpty)
         return null;
       else {
@@ -118,6 +127,9 @@ class Validators {
   ///
   static FormFieldValidator<String> email(String errorMessage) {
     return (value) {
+      if (value == null) {
+        value = '';
+      }
       if (value.isEmpty)
         return null;
       else {
@@ -149,6 +161,9 @@ class Validators {
   static FormFieldValidator<String> minLength(
       int minLength, String errorMessage) {
     return (value) {
+      if (value == null) {
+        value = '';
+      }
       if (value.isEmpty) return null;
 
       if (value.length < minLength)
@@ -176,6 +191,9 @@ class Validators {
   static FormFieldValidator<String> maxLength(
       int maxLength, String errorMessage) {
     return (value) {
+      if (value == null) {
+        value = '';
+      }
       if (value.isEmpty) return null;
 
       if (value.length > maxLength)
@@ -229,6 +247,9 @@ class Validators {
   static FormFieldValidator<String> patternRegExp(
       RegExp pattern, String errorMessage) {
     return (value) {
+      if (value == null) {
+        value = '';
+      }
       if (value.isEmpty) return null;
 
       if (pattern.hasMatch(value))

@@ -5,6 +5,7 @@ import 'package:wc_form_validators/wc_form_validators.dart';
 void main() {
   test('Test Validators.required', () {
     final errorMessage = 'Field is required';
+    expect(Validators.required(errorMessage)(null), errorMessage);
     expect(Validators.required(errorMessage)(''), errorMessage);
     expect(Validators.required(errorMessage)('any value'), null);
   });
