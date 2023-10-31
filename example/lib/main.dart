@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         inputDecorationTheme: InputDecorationTheme(
-          hasFloatingPlaceholder: true,
           border: OutlineInputBorder(),
         ),
         buttonTheme: ButtonThemeData(
