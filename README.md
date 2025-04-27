@@ -36,7 +36,7 @@ TextFormField(
 - [Minimum Length](#minimum-length)
 - [Maximum Length](#maximum-length)
 - [Pattern](#pattern)
-- [Match](#match)
+- [Must Match](#mustmatch)
 - [Compose](#compose)
 
 All validator functions have return type of `FormFieldValidator<String>` which is a required type for `validator` field in `TextFormField`.
@@ -232,8 +232,8 @@ This code will validate the TextFormField's value and show an error in case the 
 
 ---
 
-### Match
-`Validators.match(String valueToCompare, String errorMessage)` is a validator that requires the field's value to match another value. This is particularly useful for password confirmation fields.
+### Must Match
+`Validators.mustMatch(String expectedValue, String errorMessage)` is a validator that requires the field's value to match another value. This is particularly useful for password confirmation fields.
 
 #### Example
 This code will validate that the confirm password field matches the password field.
@@ -245,7 +245,7 @@ This code will validate that the confirm password field matches the password fie
     obscureText: true,
     validator: Validators.compose([
       Validators.required('Confirm password is required'),
-      Validators.match('password', 'Passwords do not match'),
+      Validators.mustMatch('password', 'Passwords do not match'),
     ]),
   ),
 ```
@@ -254,7 +254,7 @@ This code will validate that the confirm password field matches the password fie
 
 | Params         | Description                                                                                                                                                |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| valueToCompare | `String` value is passed to this parameter. The validator will return an error if TextFormField is non-empty and its value doesn't match `valueToCompare`. |
+| expectedValue  | `String` value is passed to this parameter. The validator will return an error if TextFormField is non-empty and its value doesn't match `expectedValue`. |
 | errorMessage   | `String` value is passed to this parameter to show error in case of a validation failure.                                                                  |
 
 ---

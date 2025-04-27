@@ -240,20 +240,20 @@ class Validators {
   ///             obscureText: true,
   ///             validator: Validators.compose([
   ///               Validators.required('Confirm password is required'),
-  ///               Validators.match('password', 'Passwords do not match'),
+  ///               Validators.mustMatch('password', 'Passwords do not match'),
   ///             ]),
   ///           ),
   /// ```
   ///
-  static FormFieldValidator<String> match(
-      String valueToCompare, String errorMessage) {
+  static FormFieldValidator<String> mustMatch(
+      String expectedValue, String errorMessage) {
     return (value) {
       if (value == null) {
         value = '';
       }
       if (value.isEmpty) return null;
 
-      if (value != valueToCompare)
+      if (value != expectedValue)
         return errorMessage;
       else
         return null;
