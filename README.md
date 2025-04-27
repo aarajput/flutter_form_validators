@@ -36,7 +36,7 @@ TextFormField(
 - [Minimum Length](#minimum-length)
 - [Maximum Length](#maximum-length)
 - [Pattern](#pattern)
-- [Must Match](#mustmatch)
+- [Must Match](#must-match)
 - [Compose](#compose)
 
 All validator functions have return type of `FormFieldValidator<String>` which is a required type for `validator` field in `TextFormField`.
@@ -290,6 +290,18 @@ This code will validate that _Name_ is non-empty and has a character length betw
 
 #### **_Note:_**
 
->If `TextFormField`'s value is empty, then validators [Minimum](#minimum), [Maximum](#maximum), [Email](#email), [Minimum Length](#minimum-length), [Maximum Length](#maximum-length) and [Pattern](#pattern) won't return any error because it considers `TextFormField` as optional. Use these validators in combination with the [Required](#required) validator if the specified `TextFormField` is compulsory and you want a validation failure if the field is empty. Check [Compose](#compose) validator to find out how to merge multiple validators.
+>If `TextFormField`'s value is empty, then validators [Minimum](#minimum), [Maximum](#maximum), [Email](#email), [Minimum Length](#minimum-length), [Maximum Length](#maximum-length), [Must Match](#must-match) and [Pattern](#pattern) won't return any error because it considers `TextFormField` as optional. Use these validators in combination with the [Required](#required) validator if the specified `TextFormField` is compulsory and you want a validation failure if the field is empty. Check [Compose](#compose) validator to find out how to merge multiple validators.
 
 ___
+
+
+## Contributors
+
+[![Contributors](https://img.shields.io/github/contributors/aarajput/flutter_form_validators.svg?style=flat-square)](https://github.com/aarajput/flutter_form_validators/graphs/contributors)
+
+- [grappetite-ali](https://github.com/grappetite-ali)
+- [Ali Abbas](https://github.com/aarajput)
+- [Grappetite](https://github.com/Grappetite)
+- [Ali Hamza](https://github.com/alihamza0173)
+
+---
