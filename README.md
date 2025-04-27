@@ -299,9 +299,7 @@ ___
 
 [![Contributors](https://img.shields.io/github/contributors/aarajput/flutter_form_validators.svg?style=flat-square)](https://github.com/aarajput/flutter_form_validators/graphs/contributors)
 
-- [grappetite-ali](https://github.com/grappetite-ali)
 - [Ali Abbas](https://github.com/aarajput)
-- [Grappetite](https://github.com/Grappetite)
 - [Ali Hamza](https://github.com/alihamza0173)
 
 ---
