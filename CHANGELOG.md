@@ -1,3 +1,7 @@
+## [1.1.0]
+
+* mustMatch validator added
+
 ## [1.0.1]
 
 * SDK updated to >=2.12.0 <4.0.0
