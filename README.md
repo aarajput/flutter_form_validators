@@ -36,6 +36,7 @@ TextFormField(
 - [Minimum Length](#minimum-length)
 - [Maximum Length](#maximum-length)
 - [Pattern](#pattern)
+- [Match](#match)
 - [Compose](#compose)
 
 All validator functions have return type of `FormFieldValidator<String>` which is a required type for `validator` field in `TextFormField`.
@@ -57,9 +58,9 @@ TextFormField(
 ```
 #### Parameters
 
-| Params        | Description   |
-| ------------- | ------------- |
-| errorMessage  | `String` value is passed to this parameter to show an error in case of a validation failure.|
+| Params       | Description                                                                                  |
+| ------------ | -------------------------------------------------------------------------------------------- |
+| errorMessage | `String` value is passed to this parameter to show an error in case of a validation failure. |
 
 ___
 
@@ -85,10 +86,10 @@ This code will validate a TextFormField's value and show an error in case its va
 #### Parameters
 `Validators.min` takes two parameters.
 
-| Params        | Description   |
-| ------------- | ------------- |
-|       min     | `double` value is passed to this param. Validator will return an error if TextFormField is non-empty and its value is less than `min`|
-| errorMessage  | `String` value is passed to this parameter to show an error in case of a validation failure|
+| Params       | Description                                                                                                                           |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| min          | `double` value is passed to this param. Validator will return an error if TextFormField is non-empty and its value is less than `min` |
+| errorMessage | `String` value is passed to this parameter to show an error in case of a validation failure                                           |
 
 ---
 
@@ -114,10 +115,10 @@ This code will validate TextFormField's value and show an error in case its valu
 #### Parameters
 `Validators.max` takes two parameters.
 
-| Params        | Description   |
-| ------------- | ------------- |
-|       max     | `double` value is passed to this param. Validator will return an error if TextFormField is non-empty and its value is greater than `max`|
-| errorMessage  | `String` value is passed to this parameter to show an error in case of validation failure|
+| Params       | Description                                                                                                                              |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| max          | `double` value is passed to this param. Validator will return an error if TextFormField is non-empty and its value is greater than `max` |
+| errorMessage | `String` value is passed to this parameter to show an error in case of validation failure                                                |
 
 ---
 
@@ -142,9 +143,9 @@ This code will validate the email and show an error if TextFormField's value is 
 
 #### Parameters
 
-| Params        | Description   |
-| ------------- | ------------- |
-| errorMessage  | `String` value is passed to this parameter to show an error in case of validation failure.|
+| Params       | Description                                                                                |
+| ------------ | ------------------------------------------------------------------------------------------ |
+| errorMessage | `String` value is passed to this parameter to show an error in case of validation failure. |
 
 
 ### Minimum Length
@@ -163,10 +164,10 @@ This code will validate the TextFormField's value and show an error in case fiel
 
 #### Parameters
 
-| Params        | Description   |
-| ------------- | ------------- |
-|       minLength     | `int` value is passed to this param. Validator will return an error if TextFormField is non-empty and its number of characters is less than `minLength`.|
-| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
+| Params       | Description                                                                                                                                              |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| minLength    | `int` value is passed to this param. Validator will return an error if TextFormField is non-empty and its number of characters is less than `minLength`. |
+| errorMessage | `String` value is passed to this parameter to show error in case of validation failure.                                                                  |
 
 
 ### Maximum Length
@@ -185,10 +186,10 @@ This code will validate TextFormField's value and show an error in case the fiel
 
 #### Parameters
 
-| Params        | Description   |
-| ------------- | ------------- |
-|       maxLength     | `int` value is passed to this param. The validator will return an error if the TextFormField is non-empty and its number of characters are greater than `maxLength`.|
-| errorMessage  | `String` value is passed to this parameter to show error in case of validation failure.|
+| Params       | Description                                                                                                                                                          |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| maxLength    | `int` value is passed to this param. The validator will return an error if the TextFormField is non-empty and its number of characters are greater than `maxLength`. |
+| errorMessage | `String` value is passed to this parameter to show error in case of validation failure.                                                                              |
 
 ---
 
@@ -224,10 +225,37 @@ This code will validate the TextFormField's value and show an error in case the 
 
 #### Parameters
 
-| Params        | Description   |
-| ------------- | ------------- |
-|   pattern     | `String` or `RegExp` the value is passed to this param. The validator will return an error if the TextFormField is non-empty and it's not matching the `pattern` that you have provided.|
-| errorMessage  | `String` value is passed to this parameter to show error in case of a validation failure.|
+| Params       | Description                                                                                                                                                                              |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| pattern      | `String` or `RegExp` the value is passed to this param. The validator will return an error if the TextFormField is non-empty and it's not matching the `pattern` that you have provided. |
+| errorMessage | `String` value is passed to this parameter to show error in case of a validation failure.                                                                                                |
+
+---
+
+### Match
+`Validators.match(String valueToCompare, String errorMessage)` is a validator that requires the field's value to match another value. This is particularly useful for password confirmation fields.
+
+#### Example
+This code will validate that the confirm password field matches the password field.
+```dart
+  TextFormField(
+    decoration: InputDecoration(
+      labelText: 'Confirm Password',
+    ),
+    obscureText: true,
+    validator: Validators.compose([
+      Validators.required('Confirm password is required'),
+      Validators.match('password', 'Passwords do not match'),
+    ]),
+  ),
+```
+
+#### Parameters
+
+| Params         | Description                                                                                                                                                |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| valueToCompare | `String` value is passed to this parameter. The validator will return an error if TextFormField is non-empty and its value doesn't match `valueToCompare`. |
+| errorMessage   | `String` value is passed to this parameter to show error in case of a validation failure.                                                                  |
 
 ---
 
@@ -254,10 +282,9 @@ This code will validate that _Name_ is non-empty and has a character length betw
 
 #### Parameters
 
-| Params        | Description   |
-| ------------- | ------------- |
-|   validators  | `List<FormFieldValidator<String>>` value is passed to this param containing validators that you want to combine into one validator|
-
+| Params     | Description                                                                                                                        |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| validators | `List<FormFieldValidator<String>>` value is passed to this param containing validators that you want to combine into one validator |
 
 
 ---

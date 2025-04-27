@@ -226,6 +226,40 @@ class Validators {
     return patternRegExp(RegExp(pattern), errorMessage);
   }
 
+  /// Validator that requires the field's value to match another value.
+  ///
+  /// This is particularly useful for password confirmation fields.
+  ///
+  /// ### Validate that the field matches the password
+  ///
+  /// ```dart
+  ///           TextFormField(
+  ///             decoration: InputDecoration(
+  ///               labelText: 'Confirm Password',
+  ///             ),
+  ///             obscureText: true,
+  ///             validator: Validators.compose([
+  ///               Validators.required('Confirm password is required'),
+  ///               Validators.match('password', 'Passwords do not match'),
+  ///             ]),
+  ///           ),
+  /// ```
+  ///
+  static FormFieldValidator<String> match(
+      String valueToCompare, String errorMessage) {
+    return (value) {
+      if (value == null) {
+        value = '';
+      }
+      if (value.isEmpty) return null;
+
+      if (value != valueToCompare)
+        return errorMessage;
+      else
+        return null;
+    };
+  }
+
   /// Validator that requires the field's value to match a regex pattern.
   ///
   ///
