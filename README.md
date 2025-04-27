@@ -233,19 +233,18 @@ This code will validate the TextFormField's value and show an error in case the 
 ---
 
 ### Must Match
-`Validators.mustMatch(String expectedValue, String errorMessage)` is a validator that requires the field's value to match another value. This is particularly useful for password confirmation fields.
+`Validators.mustMatch(String expectedValue, String errorMessage)` is a validator that requires the field's value to match another value. This is particularly useful for confirmation fields like password confirmation, email confirmation, etc.
 
 #### Example
-This code will validate that the confirm password field matches the password field.
+This code will validate that the confirmation field matches the original value.
 ```dart
   TextFormField(
     decoration: InputDecoration(
-      labelText: 'Confirm Password',
+      labelText: 'Confirm Value',
     ),
-    obscureText: true,
     validator: Validators.compose([
-      Validators.required('Confirm password is required'),
-      Validators.mustMatch('password', 'Passwords do not match'),
+      Validators.required('Confirmation is required'),
+      Validators.mustMatch('originalValue', 'Values do not match'),
     ]),
   ),
 ```
