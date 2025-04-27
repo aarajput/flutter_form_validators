@@ -297,7 +297,7 @@ ___
 
 ## Contributors
 
-[![Contributors](https://img.shields.io/github/contributors/aarajput/flutter_form_validators.svg?style=flat-square)](https://github.com/aarajput/flutter_form_validators/graphs/contributors)
+![Contributors](https://img.shields.io/badge/contributors-2-blue?style=flat-square)
 
 - [Ali Abbas](https://github.com/aarajput)
 - [Ali Hamza](https://github.com/alihamza0173)
