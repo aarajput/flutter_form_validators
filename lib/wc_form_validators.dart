@@ -321,6 +321,36 @@ class Validators {
     };
   }
 
+  /// Validator that requires the field's value to not have spaces at the beginning or end
+  ///
+  ///
+  /// ### Validate that the field does not have leading or trailing spaces
+  ///
+  /// ```dart
+  ///           TextFormField(
+  ///            decoration: InputDecoration(
+  ///              labelText: 'Name',
+  ///            ),
+  ///            validator: Validators.trimmed('Spaces at the beginning or end not allowed'),
+  ///          ),
+  /// ```
+  ///
+  static FormFieldValidator<String> trimmed(String errorMessage) {
+    return (value) {
+      if (value == null) {
+        value = '';
+      }
+      if (value.isEmpty)
+        return null;
+      else {
+        if (value.trim() != value) {
+          return errorMessage;
+        }
+        return null;
+      }
+    };
+  }
+
   // -------------------- private functions ---------------------- //
 
   static double _toDouble(String value) {
