@@ -320,9 +320,10 @@ ___
 
 ## Contributors
 
-![Contributors](https://img.shields.io/badge/contributors-2-blue?style=flat-square)
+![Contributors](https://img.shields.io/badge/contributors-3-blue?style=flat-square)
 
 - [Ali Abbas](https://github.com/aarajput)
 - [Ali Hamza](https://github.com/alihamza0173)
+- [Sinaloense](https://github.com/Sinaloense)
 
 ---
