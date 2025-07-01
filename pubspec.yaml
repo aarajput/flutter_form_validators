@@ -1,6 +1,6 @@
 name: wc_form_validators
 description: A Flutter plugin to validate forms with utility functions. It can validate emails, regex, character limits and many more.
-version: 1.1.0
+version: 1.2.0
 homepage: https://github.com/aarajput/flutter_form_validators
 
 environment:

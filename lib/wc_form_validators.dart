@@ -293,34 +293,6 @@ class Validators {
     };
   }
 
-  /// Compose multiple validators into a single validator.
-  ///
-  /// ### Validate that the field is non-empty and has character length between 5 and 10
-  ///
-  /// ```dart
-  ///           TextFormField(
-  ///            decoration: InputDecoration(
-  ///              labelText: 'Compose',
-  ///            ),
-  ///            validator: Validators.compose([
-  ///              Validators.required('Compose is required'),
-  ///              Validators.minLength(5, 'Characters cannot be less than 5'),
-  ///              Validators.maxLength(10, 'Characters cannot be greater than 10'),
-  ///            ]),
-  ///          ),
-  /// ```
-  ///
-  static FormFieldValidator<String> compose(
-      List<FormFieldValidator<String>> validators) {
-    return (value) {
-      for (final validator in validators) {
-        final result = validator(value);
-        if (result != null) return result;
-      }
-      return null;
-    };
-  }
-
   /// Validator that requires the field's value to not have spaces at the beginning or end
   ///
   ///
@@ -348,6 +320,34 @@ class Validators {
         }
         return null;
       }
+    };
+  }
+
+  /// Compose multiple validators into a single validator.
+  ///
+  /// ### Validate that the field is non-empty and has character length between 5 and 10
+  ///
+  /// ```dart
+  ///           TextFormField(
+  ///            decoration: InputDecoration(
+  ///              labelText: 'Compose',
+  ///            ),
+  ///            validator: Validators.compose([
+  ///              Validators.required('Compose is required'),
+  ///              Validators.minLength(5, 'Characters cannot be less than 5'),
+  ///              Validators.maxLength(10, 'Characters cannot be greater than 10'),
+  ///            ]),
+  ///          ),
+  /// ```
+  ///
+  static FormFieldValidator<String> compose(
+      List<FormFieldValidator<String>> validators) {
+    return (value) {
+      for (final validator in validators) {
+        final result = validator(value);
+        if (result != null) return result;
+      }
+      return null;
     };
   }
 

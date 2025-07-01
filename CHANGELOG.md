@@ -1,3 +1,7 @@
+## [1.2.0]
+
+* trimmed validator added
+
 ## [1.1.0]
 
 * mustMatch validator added
