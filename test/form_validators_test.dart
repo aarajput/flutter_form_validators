@@ -71,7 +71,8 @@ void main() {
     final errorMessage = 'Invalid value';
     final regexString = r"^[A-Za-z]+$";
     expect(Validators.patternString(regexString, errorMessage)(''), null);
-    expect(Validators.patternString(regexString, errorMessage)(' '), errorMessage);
+    expect(
+        Validators.patternString(regexString, errorMessage)(' '), errorMessage);
     expect(Validators.patternString(regexString, errorMessage)('a'), null);
     expect(Validators.patternString(regexString, errorMessage)('A'), null);
     expect(Validators.patternString(regexString, errorMessage)('abc'), null);
@@ -170,5 +171,15 @@ void main() {
           Validators.max(6, errorMessageMax),
         ])('6'),
         null);
+  });
+
+  test('Test Validators.trimmed', () {
+    final errorMessage = 'Spaces at the beginning or end not allowed';
+    expect(Validators.trimmed(errorMessage)(' '), errorMessage);
+    expect(Validators.trimmed(errorMessage)(' test'), errorMessage);
+    expect(Validators.trimmed(errorMessage)('test '), errorMessage);
+    expect(Validators.trimmed(errorMessage)(''), null);
+    expect(Validators.trimmed(errorMessage)('test'), null);
+    expect(Validators.trimmed(errorMessage)('hello world'), null);
   });
 }
